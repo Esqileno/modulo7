@@ -4,8 +4,8 @@ const form = document.getElementById('form-id')
 form.addEventListener('submit', function(e) {
     e.preventDefault()
     
-    const valorA = document.getElementById(parseFloat('valorA'))
-    const valorB = document.getElementById(parseFloat('valorB'))
+    const valorA = parseFloat(document.getElementById('valorA').value)
+    const valorB = parseFloat(document.getElementById('valorB').value)
     const certo = valorA < valorB
     
     const mensagemSucesso = `Você conseguiu! ${valorB} é maior que ${valorA}. PARABENS!!!` 
@@ -14,10 +14,12 @@ form.addEventListener('submit', function(e) {
     if (certo) {
         alert(mensagemSucesso)
 
-        valorA.value = ''
-        valorB.value = ''
+        valorA.valueA = ''
+        valorB.valueB = ''
 
     } else {
         alert(mensagemErro)
     }
+    console.log(valorA)
+    console.log(valorB)
 })
